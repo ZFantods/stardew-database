@@ -2,7 +2,20 @@ const ProductModel = require('../Models/ProductModel');
 
 class ProductController { // Controller class for products
     async store (req, res) {
+        const { title, description, price} = req.body;
+
+        const productExists = await ProductModel.findOne({ title });
+
+        if (productExists) {
+            return res.status(400).json({ message: 'Product already exists'});
+        }
+
+        if (!title || !description || !price) {
+            return res.status(400).json({ message: 'Missing required fields'});
+        }
+
         const createdProduct = await ProductModel.create(req.body);
+        
 
         return res.status(200).json(createdProduct);
 

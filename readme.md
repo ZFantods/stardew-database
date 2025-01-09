@@ -36,4 +36,3 @@ A API oferece informações detalhadas sobre os personagens e itens do jogo *Sta
 Aprender e consolidar conhecimentos em desenvolvimento back-end enquanto exploro um universo que gosto, o *Stardew Valley*.  
 
 ---
-
